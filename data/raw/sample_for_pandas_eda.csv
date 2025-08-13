@@ -1,0 +1,11 @@
+customer_id,fico_score,loan_amount,tenure_months,state,plan_type,monthly_income,date_issued,loan_status,loan_status_flag,credit_utilization,has_bankruptcy,cltv,util_bin,delinq_flag,high_risk_flag
+1001,705,39199.0,12,WA,Family,3577.0,2023-01-01,Current,0,0.82,0,-35622.0,High,0,0
+1002,673,25912.0,12,NC,Business,1635.0,2023-01-02,Current,0,0.74,0,-24277.0,High,0,1
+1003,712,39919.0,6,MI,Business,5397.0,2023-01-03,Current,0,0.91,0,-37220.5,High,0,1
+1004,756,39981.0,12,IL,Business,6449.0,2023-01-04,Current,0,0.68,0,-33532.0,High,0,1
+1005,668,18235.0,24,TX,Family,3126.0,2023-01-05,Default,1,0.53,1,-11983.0,Medium,1,1
+1006,759,44757.0,12,IL,Business,7999.0,2023-01-06,Current,0,0.67,0,-36758.0,High,0,1
+1007,657,36547.0,12,IL,Business,3654.0,2023-01-07,Default,1,0.49,1,-32893.0,Medium,1,1
+1008,707,46810.0,12,TX,Family,4351.0,2023-01-08,Current,0,0.78,0,-42459.0,High,0,0
+1009,584,22276.0,6,MI,Business,1922.0,2023-01-09,Current,0,0.84,1,-21315.0,High,0,1
+1010,707,34923.0,12,TX,Business,4608.0,2023-01-10,Current,0,0.73,0,-30315.0,High,0,1
