@@ -1,0 +1,19 @@
+# Maps feature-level insights to human-readable reason codes (candidate list).
+# Final adverse action reasons will be confirmed in the Regulatory-Grade project.
+reasons:
+  high_utilization:
+    description: "High revolving credit utilization"
+    feature: utilization_rate
+    threshold: 0.6
+  recent_inquiries:
+    description: "Multiple recent credit inquiries"
+    feature: inquiries_6m
+    threshold: 4
+  high_dti:
+    description: "High debt-to-income ratio"
+    feature: dti
+    threshold: 0.45
+  recent_delinquency:
+    description: "Recent delinquency events"
+    feature: delinq_12m
+    threshold: 1
