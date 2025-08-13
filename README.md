@@ -41,6 +41,5 @@ This repo emits standardized artifacts the next project will consume:
 - Model package (+ version), feature manifest, and policy map
 - Reason codes mapping for adverse action notices
 - Audit logs aligned to `docs/audit_log_schema.json`
-
 ### Dashboard (Tableau)
 ![Bureau Sandbox Dashboard](assets/bureau_dashboard.png)
