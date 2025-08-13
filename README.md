@@ -5,30 +5,7 @@
 - Execution ARN: `arn:aws:sagemaker:us-east-1:678804053923:pipeline/cbsandbox-metrics-gate/execution/4e5ath56iwkq`
 - Latest status: **Succeeded** (see screenshot in `/evidence/`)
 
-### Dashboard (Tableau)
-![Bureau Sandbox Dashboard](assets/bureau_dashboard.png)
 
-### Dashboard (Tableau)
-![Bureau Sandbox Dashboard](assets/bureau_dashboard.png)
-
----
-(Contents formerly in CB_Sandbox/README.md)
-
-# Credit Bureau Sandbox + AWS SageMaker (Reusable)
-
-**Goal:** Build a modular, repeatable credit risk segmentation and reporting pipeline on AWS that can be promoted into **Regulatory-Grade AI for Credit Decisioning** with minimal refactor.
-
-## Why this repo exists
-- Establish **clear data contracts** and **config-driven** processing so new data sources or policy changes are 1-line config updates.
-- Enforce **governance hooks** (model card, audit logs, reason codes) required for the next project.
-- Provide **SageMaker-compatible pipeline** and **local parity** for fast iteration.
-
-## Architecture (high level)
-```
-ingestion -> validation -> feature engineering -> training -> evaluation -> packaging -> (local|SageMaker) deploy
-                                  |                                         |
-                            data contracts                           governance outputs
-```
 
 ### Reusable Interfaces
 - **Data Contracts:** `data_contracts/bureau_schema.yaml`
@@ -65,3 +42,5 @@ This repo emits standardized artifacts the next project will consume:
 - Reason codes mapping for adverse action notices
 - Audit logs aligned to `docs/audit_log_schema.json`
 
+### Dashboard (Tableau)
+![Bureau Sandbox Dashboard](assets/bureau_dashboard.png)
