@@ -7,3 +7,6 @@
 
 ### Dashboard (Tableau)
 ![Bureau Sandbox Dashboard](assets/bureau_dashboard.png)
+
+### Dashboard (Tableau)
+![Bureau Sandbox Dashboard](assets/bureau_dashboard.png)
