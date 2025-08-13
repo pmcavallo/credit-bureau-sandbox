@@ -1,0 +1,52 @@
+version: 1
+name: bureau_schema
+primary_key: customer_id
+
+fields:
+  - name: customer_id
+    type: string
+    required: true
+  - name: snapshot_date
+    type: date
+    required: true
+    format: "%Y-%m-%d"
+  - name: income
+    type: float
+    min: 0
+  - name: utilization_rate
+    type: float
+    min: 0
+    max: 1
+  - name: num_trades
+    type: integer
+    min: 0
+  - name: delinq_12m
+    type: integer
+    min: 0
+  - name: inquiries_6m
+    type: integer
+    min: 0
+  - name: dti
+    type: float
+    min: 0
+  - name: cltv
+    type: float
+    min: 0
+  - name: employment_status
+    type: category
+    allowed: [ employed, self_employed, unemployed, student, retired ]
+  - name: state
+    type: category
+    allowed: [ "AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","IA","ID","IL","IN","KS","KY","LA","MA","MD","ME","MI","MN","MO","MS","MT","NC","ND","NE","NH","NJ","NM","NV","NY","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VA","VT","WA","WI","WV","WY" ]
+  - name: age
+    type: integer
+    min: 18
+  - name: tenure_months
+    type: integer
+    min: 0
+  - name: risk_segment
+    type: category
+    allowed: [ low, med, high ]
+  - name: defaulted
+    type: integer
+    allowed: [0, 1]
