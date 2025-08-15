@@ -1,0 +1,73 @@
+sagemaker.config INFO - Not applying SDK defaults from location: C:\ProgramData\sagemaker\sagemaker\config.yaml
+sagemaker.config INFO - Not applying SDK defaults from location: C:\Users\Paulo\AppData\Local\sagemaker\sagemaker\config.yaml
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+Starting pipeline: cbsandbox-metrics-gate with AUC=0.66, KS=0.25, PSI=0.2
+PipelineExecutionArn: arn:aws:sagemaker:us-east-1:678804053923:pipeline/cbsandbox-metrics-gate/execution/fgkhg5vzvpjt
++--------------------- Traceback (most recent call last) ---------------------+
+| C:\credit_risk_project\CB_Sandbox\pipelines\sagemaker\pipeline_gate.py:68   |
+| in <module>                                                                 |
+|                                                                             |
+|   65         print('FailureReason:', desc['FailureReason'])                 |
+|   66                                                                        |
+|   67 if __name__ == '__main__':                                             |
+| > 68     main()                                                             |
+|   69                                                                        |
+|                                                                             |
+| C:\credit_risk_project\CB_Sandbox\pipelines\sagemaker\pipeline_gate.py:61   |
+| in main                                                                     |
+|                                                                             |
+|   58     print(f'Starting pipeline: {pipe_name} with AUC={auc}, KS={ks}, PS |
+|   59     exe = pipeline.start(parameters={'AUC': auc, 'KS': ks, 'PSI': psi} |
+|   60     print('PipelineExecutionArn:', exe.arn)                            |
+| > 61     exe.wait(max_attempts=120)                                         |
+|   62     desc = exe.describe()                                              |
+|   63     print('Status:', desc.get('PipelineExecutionStatus'))              |
+|   64     if desc.get('FailureReason'):                                      |
+|                                                                             |
+| C:\Users\Paulo\miniconda3\envs\cbsandbox\Lib\site-packages\sagemaker\workfl |
+| ow\pipeline.py:938 in wait                                                  |
+|                                                                             |
+|    935         waiter = botocore.waiter.create_waiter_with_client(          |
+|    936             waiter_id, model, self.sagemaker_session.sagemaker_clien |
+|    937         )                                                            |
+| >  938         waiter.wait(PipelineExecutionArn=self.arn)                   |
+|    939                                                                      |
+|    940     def result(self, step_name: str):                                |
+|    941         """Retrieves the output of the provided step if it is a ``@s |
+|                                                                             |
+| C:\Users\Paulo\miniconda3\envs\cbsandbox\Lib\site-packages\botocore\waiter. |
+| py:58 in wait                                                               |
+|                                                                             |
+|    55     # Waiter.wait method. This is needed to attach a docstring to the |
+|    56     # method.                                                         |
+|    57     def wait(self, **kwargs):                                         |
+| >  58         Waiter.wait(self, **kwargs)                                   |
+|    59                                                                       |
+|    60     wait.__doc__ = WaiterDocstring(                                   |
+|    61         waiter_name=waiter_name,                                      |
+|                                                                             |
+| C:\Users\Paulo\miniconda3\envs\cbsandbox\Lib\site-packages\botocore\context |
+| .py:123 in wrapper                                                          |
+|                                                                             |
+|   120             with start_as_current_context():                          |
+|   121                 if hook:                                              |
+|   122                     hook()                                            |
+| > 123                 return func(*args, **kwargs)                          |
+|   124                                                                       |
+|   125         return wrapper                                                |
+|   126                                                                       |
+|                                                                             |
+| C:\Users\Paulo\miniconda3\envs\cbsandbox\Lib\site-packages\botocore\waiter. |
+| py:378 in wait                                                              |
+|                                                                             |
+|   375                 return                                                |
+|   376             if current_state == 'failure':                            |
+|   377                 reason = f'Waiter encountered a terminal failure stat |
+| > 378                 raise WaiterError(                                    |
+|   379                     name=self.name,                                   |
+|   380                     reason=reason,                                    |
+|   381                     last_response=response,                           |
++-----------------------------------------------------------------------------+
+WaiterError: Waiter PipelineExecutionComplete failed: Waiter encountered a 
+terminal failure state: For expression "PipelineExecutionStatus" we matched 
+expected path: "Failed"
