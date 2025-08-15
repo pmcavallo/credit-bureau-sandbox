@@ -2,7 +2,7 @@ sagemaker.config INFO - Not applying SDK defaults from location: C:\ProgramData\
 sagemaker.config INFO - Not applying SDK defaults from location: C:\Users\Paulo\AppData\Local\sagemaker\sagemaker\config.yaml
 INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
 Starting pipeline: cbsandbox-metrics-gate with AUC=0.66, KS=0.25, PSI=0.2
-PipelineExecutionArn: arn:aws:sagemaker:us-east-1:678804053923:pipeline/cbsandbox-metrics-gate/execution/fgkhg5vzvpjt
+PipelineExecutionArn: arn:aws:sagemaker:us-east-1:678804053923:pipeline/cbsandbox-metrics-gate/execution/nhmm3ajuaoww
 +--------------------- Traceback (most recent call last) ---------------------+
 | C:\credit_risk_project\CB_Sandbox\pipelines\sagemaker\pipeline_gate.py:68   |
 | in <module>                                                                 |
